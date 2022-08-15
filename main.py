@@ -109,7 +109,7 @@ if __name__ == '__main__':
         utils.load_checkpoint(model, args.checkpoint_dir,cuda)
 
         # # eval the robustness of explanation by getetic algorithm
-        # eval_ga(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
+        eval_ga(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
 
         # # eval the robustness of explanation by subset simulation
         # eval_ss(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
