@@ -1,2 +1,2 @@
 # Eval_XAI_Robustness
-Evaluation robustness of neural network interpretation from worst case and probablistic view.
+This is the repository for paper ["SAFARI: Versatile and Efficient Evaluations for Robustness of Interpretability"](https://arxiv.org/abs/2208.09418). It proposes two evaluation metrics for robustness of interpretation from worst-case and probabilistic perspective, resepectively. The popular XAI methods, such as Integreted Gradient, LRP, and DeepLift are supported for the evaluation.
