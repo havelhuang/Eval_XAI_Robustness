@@ -28,6 +28,7 @@ import utils
 
 parser = argparse.ArgumentParser('Interpretation Testing Pytorch Implementation')
 parser.add_argument('--dataset', default='mnist', choices=list(TRAIN_DATASETS.keys()))
+parser.add_argument('--eval_metric', default = 'SS', dest='eval_metric',type=str)
 parser.add_argument('--train', default = False, dest='train',type=util.strtobool)
 parser.add_argument('--epochs', type=int, default=100)
 parser.add_argument('--batch-size', type=int, default=64)
@@ -108,11 +109,12 @@ if __name__ == '__main__':
     else:
         utils.load_checkpoint(model, args.checkpoint_dir,cuda)
 
-        # # eval the robustness of explanation by getetic algorithm
-        eval_ga(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
-
-        # # eval the robustness of explanation by subset simulation
-        # eval_ss(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
+        if args.eval_metric.lower() == 'ga':
+            # # eval the robustness of explanation by getetic algorithm
+            eval_ga(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
+        elif args.eval_metric.lower() == 'ss':
+            # # eval the robustness of explanation by subset simulation
+            eval_ss(model, test_dataset, dataset_config, args.batch_size, eps, cuda)
 
         ###############################################################################
         ###############################################################################

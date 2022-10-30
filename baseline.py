@@ -5,7 +5,6 @@ import utils
 import torch
 import os
 import torch.nn as nn
-from model.inception import InceptionV3
 from sklearn.neighbors import KernelDensity
 from torch.distributions import MultivariateNormal, Normal
 import torch.distributions as dist
