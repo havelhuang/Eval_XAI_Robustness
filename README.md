@@ -21,3 +21,12 @@ Requires Linux Platform with `Python 3.8.5`. We recommend to use anaconda for cr
 ## How To Use 
 The tool can be run for XAI robustness evaluation, test model training with the following commands.
 
+### Quick Start 
+You can quickly run the worst-case robustness evaluation on intrepation by Gradient x Input, using Genetic Algorithm as optimizier:
+``` 
+python main.py --eval_metric ga
+```
+or probabilistic robustness evaluation on intrepation by Gradient x Input, using Subset Simulation as sampling method:
+``` 
+python main.py --eval_metric ss
+```
